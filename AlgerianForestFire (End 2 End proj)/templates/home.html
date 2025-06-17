@@ -3,23 +3,19 @@
         <div class="login">
             <h1>FWI PREDICTION <h1>
 
-            <form action="
-                <label for="temperature">Temperature:</label>
-                <input type="number" id="temperature" name="temperature" step="any" required><br><br>
-                <label for="humidity">Humidity:</label>
-                <input type="number" id="humidity" name="humidity" step="any" required><br><br>
-                <label for="wind">Wind Speed:</label>
-                <input type="number" id="wind" name="wind" step="any" required><br><br>
-                <label for="rain">Rain (mm):</label>
-                <input type="number" id="rain" name="rain" step="any" required><br><br>
-                <input type="submit" value="Predict">
-            </form>
-
-
-
-
-
-            </form>
-        </div>
+       <form action="{{ url_for('predict_datapoint') }}" method="post">
+    <input type="text" name="Temperature" placeholder="Temperature" required /> <br>
+    <input type="text" name="RH" placeholder="RH" required /> <br>
+    <input type="text" name="Ws" placeholder="Ws" required /> <br>
+    <input type="text" name="Rain" placeholder="Rain" required /> <br>
+    <input type="text" name="FFMC" placeholder="FFMC" required /> <br>
+    <input type="text" name="DMC" placeholder="DMC" required /> <br>
+    <input type="text" name="ISI" placeholder="ISI" required /> <br>
+    <input type="text" name="Classes" placeholder="Classes" required /> <br>
+    <input type="text" name="Region" placeholder="Region" required /> <br>
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</form>
+            <h2>
+                THE FWI PREDICTION IS {{results}}            </h2>
     </body>
 </html>
